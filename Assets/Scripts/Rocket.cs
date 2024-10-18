@@ -21,16 +21,16 @@ public class Rocket : MonoBehaviour
     private void Update()
     {
         rocketDashboard.UpdateUI();
-
-        if (rocketEnergySystem.fuel < 100f)
-        {
-            rocketEnergySystem.fuel += 0.1f;
-            rocketEnergySystem.CheckFuel();
-        }
+        rocketEnergySystem.FuelFill();
     }
 
-    public void Retry()
+    public void Shoot()
     {
-        SceneManager.LoadScene("RocketLauncher");
+        if (rocketEnergySystem.fuel >= 10f)
+        {
+            _rb2d.AddForce(Vector2.up * rocketEnergySystem.SPEED, ForceMode2D.Impulse);
+            rocketEnergySystem.fuel -= rocketEnergySystem.FUELPERSHOOT;
+            rocketEnergySystem.CheckFuel();
+        }
     }
 }

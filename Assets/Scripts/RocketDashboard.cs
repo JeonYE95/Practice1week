@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class RocketDashboard : MonoBehaviour
@@ -20,5 +21,10 @@ public class RocketDashboard : MonoBehaviour
             HighScore = currentScore;
             HighScoreTxt.text = $"{currentScore} M";
         }
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("RocketLauncher");
     }
 }
