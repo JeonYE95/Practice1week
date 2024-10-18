@@ -270,9 +270,9 @@ GameObject:
   - component: {fileID: 125341251}
   - component: {fileID: 125341255}
   - component: {fileID: 125341254}
+  - component: {fileID: 125341258}
   - component: {fileID: 125341257}
   - component: {fileID: 125341256}
-  - component: {fileID: 125341258}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -456,11 +456,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 125341250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5e9a1bd1fbc6e049bc58863d91721f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 19282e25dc5683141bd20bcd722e37a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketEnergySystem: {fileID: 125341256}
-  rocketDashboard: {fileID: 125341258}
+  currentScore: 0
+  HighScore: 0
+  currentScoreTxt: {fileID: 87302837}
+  HighScoreTxt: {fileID: 1826311651}
 --- !u!114 &125341258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,13 +472,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 125341250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19282e25dc5683141bd20bcd722e37a4, type: 3}
+  m_Script: {fileID: 11500000, guid: f5e9a1bd1fbc6e049bc58863d91721f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScore: 0
-  HighScore: 0
-  currentScoreTxt: {fileID: 87302837}
-  HighScoreTxt: {fileID: 1826311651}
+  rocketEnergySystem: {fileID: 125341256}
+  rocketDashboard: {fileID: 125341257}
 --- !u!1 &318512167
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,7 +1201,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 125341257}
-        m_TargetAssemblyTypeName: Rocket, Assembly-CSharp
+        m_TargetAssemblyTypeName: RocketDashboard, Assembly-CSharp
         m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
@@ -1333,8 +1333,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 125341256}
-        m_TargetAssemblyTypeName: RocketEnergySystem, Assembly-CSharp
+      - m_Target: {fileID: 125341258}
+        m_TargetAssemblyTypeName: Rocket, Assembly-CSharp
         m_MethodName: Shoot
         m_Mode: 1
         m_Arguments:
