@@ -24,7 +24,7 @@ public class Rocket : MonoBehaviour
 
         if (rocketEnergySystem.fuel < 100f)
         {
-            rocketEnergySystem.fuel += 0.1f * Time.deltaTime;
+            rocketEnergySystem.fuel += 0.1f;
             rocketEnergySystem.CheckFuel();
         }
     }
